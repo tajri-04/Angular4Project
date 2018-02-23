@@ -1,0 +1,26 @@
+.message {
+   border: 0.5vh solid black; 
+   border-radius: 1vh;
+   padding: 1 vh;
+}
+
+.is-odd {
+    background-color: rgb(135, 204, 24); 
+ }
+
+ .message-content {
+    color: rgba(32, 23, 3, 0.801); 
+ }
+
+ .message-date {
+    color: rgba(247, 95, 7, 0.801); 
+ }
+
+ .message-author {
+    color: rgba(239, 7, 247, 0.801); 
+ }
+ 
+/*
+message-author
+message-content
+message-date*/

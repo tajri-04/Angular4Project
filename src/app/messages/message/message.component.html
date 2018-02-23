@@ -1,0 +1,31 @@
+<div *ngIf="!message.hidden">
+    <div appMessageHide>delete</div>
+  <div [ngSwitch]="message.type">
+    <!-- TEXT -->
+    <div *ngSwitchCase="messageType.TEXT">
+  <div class="message" [ngClass]="{'is-odd': !(index % 2)}">
+    <p class="message-author"> {{message.author}}</p>
+    <p [innerHTML]="message.content | hashTags: 'red'" class="message-content"> </p>
+    <p class="message-date"> {{message.date| date:'shortDate'}}</p>
+    <p >Fouaaaaaaaaaaaaaaaaaaaaaaaad</p>
+
+  </div>
+</div>
+
+ <!-- IMAGE -->
+<div *ngSwitchCase="messageType.IMAGE">
+    <div class="message" [ngClass]="{'is-odd': !(index % 2)}">
+      <img [attr.src]="message.image" />
+
+      <p [innerHTML]="message.content | hashTags: 'red'" class="message-content"> </p>
+    </div>
+  </div>
+
+<!-- VIDEO -->
+<div *ngSwitchCase="messageType.VIDEO">
+   <iframe width="600" height="300" [src]="message.video" gesture="media" ></iframe>
+  </div>
+
+
+</div>
+</div>

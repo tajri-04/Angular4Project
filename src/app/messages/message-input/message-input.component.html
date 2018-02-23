@@ -1,0 +1,9 @@
+<div>
+  <form (ngSubmit)="onButtonClick()" #inputForm="ngForm">
+    <span *ngIf="inputForm.invalid && (inputForm.dirty || inputForm.touched)"> error message</span>
+  <input name="message-content" [(ngModel)]="input" type="text" placeholder="what's up" required  minlength="4">
+  <button *ngIf="!imageSwitch" (click)="imageSwitch=!imageSwitch"> add an image </button>
+  <input name="message-image" [(ngModel)]="imageURL" *ngIf="imageSwitch" type="text" placeholder="">
+  <button *ngIf="inputForm.valid">send</button>
+</form>
+</div>

@@ -1,0 +1,7 @@
+<div>
+  <button (click)="messagesService.loadMessages()">refresh</button>
+  <app-message-input></app-message-input>
+      <app-message  *ngFor="let message of _messages.reverse(); let i = index"
+      [message]="message"
+      [index]="i"></app-message>
+</div>

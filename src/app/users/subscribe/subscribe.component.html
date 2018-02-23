@@ -1,0 +1,16 @@
+
+<span class="error">{{error}}</span>
+<form [formGroup]="subscriptionForm" (ngSubmit)="subscribeUser()">
+    <p>
+      <label>login</label>
+      <input name="login" formControlName="login" required>
+    </p>
+    <p>
+        <label *ngIf="subscriptionForm.password && !subscriptionForm.get('password').valid">password error</label>
+        <label>password</label>
+        <input name="password" type="password"  formControlName="password" required>
+      </p>
+      <input name="submit" type="submit" value="Subscribe">
+      {{subscriptionForm.value | json}}
+      {{subscriptionForm.status}}
+</form>
